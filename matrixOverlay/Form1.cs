@@ -29,7 +29,8 @@ namespace matrixOverlay
         static System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
 
         //private static Label label = new Label();
-        private static Label[] labels = new Label[10];
+        private static Label[] labels = new Label[1];
+        private static Label creeper = new Label();
         private static int width, height;
 
         private static int x = 0, y = 0;
@@ -53,6 +54,7 @@ namespace matrixOverlay
                 this.Controls.Add(labels[i]);
             }
             //this.Controls.Add(label);
+            this.Controls.Add(creeper);
 
             width = this.Width;
             height = this.Height;
@@ -66,8 +68,37 @@ namespace matrixOverlay
         private static void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
         {
             moveLabel();
+            moveCreeper();
         }
 
+        private static void moveCreeper()
+        {
+            Random rand = new Random();
+            int random = rand.Next(1000);
+            creeper.Text = "" + (char)random;
+            creeper.Location = new Point(x, y);
+            creeper.AutoSize = true;
+            int fontSize = rand.Next(0) + 50;
+            creeper.Font = new Font("Consolas", fontSize);
+            creeper.ForeColor = Color.FromArgb(rand.Next(100), rand.Next(156) + 100, rand.Next(156));
+            creeper.Padding = new Padding(0);
+            if (y < height)
+            {
+                y += 50;
+            }
+            else
+            {
+                y = 0;
+                if(x < width)
+                {
+                    x += 50;
+                }
+                else
+                {
+                    x = 0;
+                }
+            }
+        }
         private static void moveLabel()
         {
 

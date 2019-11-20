@@ -29,7 +29,7 @@ namespace matrixOverlay
         static System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
 
         //private static Label label = new Label();
-        private static Label[] labels = new Label[20];
+        private static Label[] labels = new Label[10];
         private static int width, height;
 
         private static int x = 0, y = 0;
@@ -70,25 +70,18 @@ namespace matrixOverlay
 
         private static void moveLabel()
         {
-            Random rand = new Random();
-            int random = rand.Next(99);
-            for(int i = 0; i < labels.Length; i++)
+
+            for (int i = 0; i < labels.Length; i++)
             {
+                Random rand = new Random();
+                int random = rand.Next(1000);
                 labels[i].Text = "" + (char)random;
-                labels[i].Location = new Point(x, y);
+                labels[i].Location = new Point(rand.Next(width), rand.Next(height));
                 labels[i].AutoSize = true;
-                labels[i].Font = new Font("Consolas", 90);
-                labels[i].ForeColor = Color.Green;
+                int fontSize = rand.Next(1000)+1;
+                labels[i].Font = new Font("Consolas", fontSize);
+                labels[i].ForeColor = Color.FromArgb(rand.Next(100), rand.Next(156)+100, rand.Next(156));
                 labels[i].Padding = new Padding(0);
-                if (y < height)
-                {
-                    y += 100;
-                }
-                else
-                {
-                    y = 0;
-                    x += 100;
-                }
             }
 
         }

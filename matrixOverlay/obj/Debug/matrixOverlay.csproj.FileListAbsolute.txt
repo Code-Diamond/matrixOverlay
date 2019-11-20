@@ -1,0 +1,9 @@
+C:\Users\root\source\repos\matrixOverlay\matrixOverlay\bin\Debug\matrixOverlay.exe.config
+C:\Users\root\source\repos\matrixOverlay\matrixOverlay\bin\Debug\matrixOverlay.exe
+C:\Users\root\source\repos\matrixOverlay\matrixOverlay\bin\Debug\matrixOverlay.pdb
+C:\Users\root\source\repos\matrixOverlay\matrixOverlay\obj\Debug\matrixOverlay.csprojAssemblyReference.cache
+C:\Users\root\source\repos\matrixOverlay\matrixOverlay\obj\Debug\matrixOverlay.Properties.Resources.resources
+C:\Users\root\source\repos\matrixOverlay\matrixOverlay\obj\Debug\matrixOverlay.csproj.GenerateResource.cache
+C:\Users\root\source\repos\matrixOverlay\matrixOverlay\obj\Debug\matrixOverlay.exe
+C:\Users\root\source\repos\matrixOverlay\matrixOverlay\obj\Debug\matrixOverlay.pdb
+C:\Users\root\source\repos\matrixOverlay\matrixOverlay\obj\Debug\matrixOverlay.Form1.resources

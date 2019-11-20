@@ -28,7 +28,8 @@ namespace matrixOverlay
 
         static System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
 
-        private static Label label = new Label();
+        //private static Label label = new Label();
+        private static Label[] labels = new Label[20];
         private static int width, height;
 
         private static int x = 0, y = 0;
@@ -46,7 +47,12 @@ namespace matrixOverlay
             this.BackColor = Color.White;
             this.TransparencyKey = Color.White;
 
-            this.Controls.Add(label);
+            for(int i = 0; i < labels.Length; i++)
+            {
+                labels[i] = new Label();
+                this.Controls.Add(labels[i]);
+            }
+            //this.Controls.Add(label);
 
             width = this.Width;
             height = this.Height;
@@ -66,21 +72,25 @@ namespace matrixOverlay
         {
             Random rand = new Random();
             int random = rand.Next(99);
-            label.Text = ""+(char)random;
-            label.Location = new Point(x, y);
-            label.AutoSize = true;
-            label.Font = new Font("Consolas", 90);
-            label.ForeColor = Color.DarkRed;
-            label.Padding = new Padding(0);
-            if (y < height)
+            for(int i = 0; i < labels.Length; i++)
             {
-                y += 100;
+                labels[i].Text = "" + (char)random;
+                labels[i].Location = new Point(x, y);
+                labels[i].AutoSize = true;
+                labels[i].Font = new Font("Consolas", 90);
+                labels[i].ForeColor = Color.Green;
+                labels[i].Padding = new Padding(0);
+                if (y < height)
+                {
+                    y += 100;
+                }
+                else
+                {
+                    y = 0;
+                    x += 100;
+                }
             }
-            else
-            {
-                y = 0;
-                x += 100;
-            }
+
         }
         
 

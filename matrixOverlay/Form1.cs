@@ -28,9 +28,8 @@ namespace matrixOverlay
 
         static System.Windows.Forms.Timer myTimer = new System.Windows.Forms.Timer();
 
-        //private static Label label = new Label();
-        private static Label[] labels = new Label[1];
         private static Label creeper = new Label();
+
         private static int width, height;
 
         private static int x = 0, y = 0;
@@ -48,12 +47,6 @@ namespace matrixOverlay
             this.BackColor = Color.White;
             this.TransparencyKey = Color.White;
 
-            for(int i = 0; i < labels.Length; i++)
-            {
-                labels[i] = new Label();
-                this.Controls.Add(labels[i]);
-            }
-            //this.Controls.Add(label);
             this.Controls.Add(creeper);
 
             width = this.Width;
@@ -67,7 +60,6 @@ namespace matrixOverlay
 
         private static void TimerEventProcessor(Object myObject, EventArgs myEventArgs)
         {
-            moveLabel();
             moveCreeper();
         }
 
@@ -82,6 +74,7 @@ namespace matrixOverlay
             creeper.Font = new Font("Consolas", fontSize);
             creeper.ForeColor = Color.FromArgb(rand.Next(100), rand.Next(156) + 100, rand.Next(156));
             creeper.Padding = new Padding(0);
+
             if (y < height)
             {
                 y += 50;
@@ -99,23 +92,7 @@ namespace matrixOverlay
                 }
             }
         }
-        private static void moveLabel()
-        {
 
-            for (int i = 0; i < labels.Length; i++)
-            {
-                Random rand = new Random();
-                int random = rand.Next(1000);
-                labels[i].Text = "" + (char)random;
-                labels[i].Location = new Point(rand.Next(width), rand.Next(height));
-                labels[i].AutoSize = true;
-                int fontSize = rand.Next(1000)+1;
-                labels[i].Font = new Font("Consolas", fontSize);
-                labels[i].ForeColor = Color.FromArgb(rand.Next(100), rand.Next(156)+100, rand.Next(156));
-                labels[i].Padding = new Padding(0);
-            }
-
-        }
         
 
         private void Form1_Load(object sender, EventArgs e)

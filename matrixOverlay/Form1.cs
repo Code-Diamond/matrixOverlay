@@ -66,11 +66,6 @@ namespace matrixOverlay
                 }
             }
 
-            //for(int i = 0; i < droplet.Length; i++)
-            //{
-            //    droplet[i] = new Label();
-            //    this.Controls.Add(droplet[i]);
-            //}
 
             width = this.Width;
             height = this.Height;
@@ -98,9 +93,9 @@ namespace matrixOverlay
                 for (int j = 0; j < droplets[i].Length; j++)
                 {
                     droplets[i][j].Text = "" + (char)(rand.Next(999));
-                    droplets[i][j].Location = new Point(x + (j*300), y - (300 * i));
+                    droplets[i][j].Location = new Point(x + (j*200), y - (200 * i));
                     droplets[i][j].AutoSize = true;
-                    int fontSize = rand.Next(200) + 50;
+                    int fontSize = rand.Next(100) + 50;
                     droplets[i][j].Font = new Font("Consolas", fontSize);
                     droplets[i][j].ForeColor = Color.FromArgb(rand.Next(100), rand.Next(156) + 100, rand.Next(156));
                     droplets[i][j].Padding = new Padding(0);
@@ -115,10 +110,10 @@ namespace matrixOverlay
             }
             else
             {
-                y = 0;
+                //y = 0;
                 if (x < width)
                 {
-                    x += 50;
+                    //x += 50;
                 }
                 else
                 {
